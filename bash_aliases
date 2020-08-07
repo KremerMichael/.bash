@@ -13,6 +13,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+#for automated git_push
+alias gp='git_push'
+
 #todo alias
 alias td='todo'
 
