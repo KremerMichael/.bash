@@ -7,7 +7,7 @@ notify-slack() {
     msg=$1 #grab first input
     echo $1
     data='{"text" : "'"$msg"'"}'
-    SLACK_MESG="curl -X POST -H 'Content-type: application/json' --data '${data}' https://hooks.slack.com/services/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"
+    SLACK_MESG="curl -X POST -H 'Content-type: application/json' --data '${data}' https://hooks.slack.com/services/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"
     echo $SLACK_MESG | bash >& /dev/null
 }
 
