@@ -21,11 +21,11 @@ vivado_gui() {
 #Read from todo list
 todo() {
     clear
-    cat ~/Documents/notes/toDo.txt
+    cat ~/Documents/toDo.txt
 }
 
 todo_edit() {
-    emacs ~/Documents/notes/toDo.txt -nw
+    emacs ~/Documents/toDo.txt -nw
 }
 
 git_config() {
