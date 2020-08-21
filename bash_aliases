@@ -22,6 +22,12 @@ alias td='todo'
 #Confirm before overwriting something
 alias cp="cp -i"
 
+#cd shortcuts
+alias c.="cd ../"
+alias c2="cd ../../"
+alias c3="cd ../../../"
+alias c4="cd ../../../../"
+
 #human-readable sizes
 alias df='df -h'
 
