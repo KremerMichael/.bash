@@ -1,6 +1,12 @@
 #=================================================================================================#
 # BASH SOURCES
 #=================================================================================================#
+#It's nice to have a custom start up message, major ego boost
+echo "Running custom bash shell by Michael Kremer, kremeremichael@gmail.com"
+date
+#Fun display for system info
+neofetch
+
 #Store alias definitions in ~/.bash/bash_aliases and load them with this
 if [ -f ~/.bash/bash_aliases ]; then
     . ~/.bash/bash_aliases
