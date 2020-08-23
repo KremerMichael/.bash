@@ -104,6 +104,18 @@ git_push() {
     git push -u origin $branch
 }
 
+status() {
+	 #check if in git repo
+	 if [ -f .git ] | [ -d .git ] ; then
+	    git status
+	 #else check if in svn repo
+	 elif [ -d .svn ] ; then
+	    svn status
+	 #else print not inside of git/svn repo
+	 else
+	     echo "Not inside of git or svn repo"
+	 fi	
+}
 #=================================================================================================#
 # HOUSE-KEEPING
 #=================================================================================================#
