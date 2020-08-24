@@ -13,8 +13,14 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+#to run eagle
+alias eagle='~/Public/eagle-9.6.2/eagle'
+
 #for automated git_push
 alias gp='git_push'
+
+#Shorten tilde function
+alias ct='clean_tilde'
 
 #todo alias
 alias td='todo'
