@@ -9,6 +9,9 @@ alias emasc='emacs -nw'
 alias emcas='emacs -nw'
 alias emcsa='emacs -nw'
 
+#Lauching doom, i.e.
+alias doom='emacs'
+
 #Some ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
