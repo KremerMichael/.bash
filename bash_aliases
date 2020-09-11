@@ -4,10 +4,10 @@
 #=================================================================================================#
 
 #Emacs typos
-alias emacs='emacs -nw'
-alias emasc='emacs -nw'
-alias emcas='emacs -nw'
-alias emcsa='emacs -nw'
+#alias emacs='emacs -nw'
+#alias emasc='emacs -nw'
+#alias emcas='emacs -nw'
+#alias emcsa='emacs -nw'
 
 #Lauching doom, i.e.
 alias doom='emacs'

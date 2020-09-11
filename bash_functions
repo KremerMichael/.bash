@@ -106,16 +106,19 @@ git_push() {
 }
 
 status() {
-	 #check if in git repo
-	 if [ -f .git ] | [ -d .git ] ; then
-	    git status
-	 #else check if in svn repo
-	 elif [ -d .svn ] ; then
-	    svn status
-	 #else print not inside of git/svn repo
-	 else
-	     echo "Not inside of git or svn repo"
-	 fi	
+    git status > /tmp/tmp.txt
+    if [ $? = 0 ]
+   then
+    cat /tmp/tmp.txt
+    else
+    svn status > /tmp/tmp.txt
+    if [ $? = 0 ]
+   then
+    cat /tmp/tmp.txt
+    else
+    echo "Not in git or svn repo"
+    fi
+    fi
 }
 #=================================================================================================#
 # HOUSE-KEEPING
@@ -132,4 +135,5 @@ clean_vivado() {
     rm ./vivado.jou
     rm ./vivado.log
 }
+
 

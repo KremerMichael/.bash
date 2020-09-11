@@ -3,8 +3,8 @@
 # BASH SOURCES
 #=================================================================================================#
 #It's nice to have a custom start up message, major ego boost
-echo "Running custom bash shell by Michael Kremer, kremeremichael@gmail.com"
-date
+#echo "Running custom bash shell by Michael Kremer, kremeremichael@gmail.com"
+#date
 #Fun display for system info
 neofetch
 
