@@ -4,10 +4,9 @@
 #=================================================================================================#
 
 #Emacs typos
-#alias emacs='emacs -nw'
-#alias emasc='emacs -nw'
-#alias emcas='emacs -nw'
-#alias emcsa='emacs -nw'
+alias emasc='emacs'
+alias emcas='emacs'
+alias emcsa='emacs'
 
 #Lauching doom, i.e.
 alias doom='emacs'
@@ -19,6 +18,9 @@ alias l='ls -CF'
 
 #to run eagle
 alias eagle='~/Public/eagle-9.6.2/eagle'
+
+#to run Citrix Desktop app
+alias citrix='/opt/Citrix/ICAClient/selfservice'
 
 #for automated git_push
 alias gp='git_push'
