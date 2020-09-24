@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-tesla_ssh() {
-    ssh mikekremer@tesla.bu.edu
-}

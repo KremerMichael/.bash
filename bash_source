@@ -2,12 +2,6 @@
 #=================================================================================================#
 # BASH SOURCES
 #=================================================================================================#
-#It's nice to have a custom start up message, major ego boost
-#echo "Running custom bash shell by Michael Kremer, kremeremichael@gmail.com"
-#date
-#Fun display for system info
-neofetch
-
 #Store alias definitions in ~/.bash/bash_aliases and load them with this
 if [ -f ~/.bash/bash_aliases ]; then
     . ~/.bash/bash_aliases
@@ -34,6 +28,9 @@ if [ -f ~/.bash/bash_ssh ]; then
 fi
 # Note that bash_ssh is ignored in the git repo,
 # It's probably smart to not host ssh usernames and destinations remotely
+if [ -f ~/.bash/bash_private ]; then
+    . ~/.bash/bash_private
+fi
 
 # enable programmable completion features
 if ! shopt -oq posix; then
@@ -44,3 +41,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
+#Purely Rice
+neofetch
+todo_nc

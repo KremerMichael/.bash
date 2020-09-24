@@ -8,6 +8,9 @@ alias emasc='emacs'
 alias emcas='emacs'
 alias emcsa='emacs'
 
+#Python
+alias python='python3.8'
+
 #Lauching doom, i.e.
 alias doom='emacs'
 
@@ -42,6 +45,9 @@ alias c4="cd ../../../../"
 
 #human-readable sizes
 alias df='df -h'
+
+#Check mem of home directory
+alias home_mem='du -shc *'
 
 #Add an "alert" alias for long running commands.  Use like so:
 #example: sleep 10; alert

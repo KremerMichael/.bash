@@ -23,16 +23,27 @@ vivado_gui() {
 todo() {
     clear
     cat ~/Documents/toDo.txt
+    date
+}
+
+todo_nc() {
+    cat ~/Documents/toDo.txt
+    date
 }
 
 todo_edit() {
-    emacs ~/Documents/toDo.txt -nw
+    emacs ~/Documents/toDo.txt
 }
 
 git_config() {
     git config --global user.email $EMAIL
     git config --global user.name  $GIT_USERNAME
 }
+
+LS() {
+    clear
+    ls
+    }
 
 #Archive extractor
 #usage: ex <file>
