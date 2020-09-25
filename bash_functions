@@ -116,6 +116,18 @@ git_push() {
     git push -u origin $branch
 }
 
+git_recursive() {
+
+    #if there are git submodules
+    top=$(pwd)
+    paths=$(cat .gitmodules | grep path)
+    echo $paths
+    #No git submodules
+
+}
+
+
+
 status() {
     git status > /tmp/tmp.txt
     if [ $? = 0 ]
