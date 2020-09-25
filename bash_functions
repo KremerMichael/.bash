@@ -38,6 +38,7 @@ todo_edit() {
 git_config() {
     git config --global user.email $EMAIL
     git config --global user.name  $GIT_USERNAME
+    git config --global credential.helper 'cache --timeout=3600'
 }
 
 LS() {
