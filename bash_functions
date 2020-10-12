@@ -44,7 +44,7 @@ git_config() {
 LS() {
     clear
     ls
-    }
+}
 
 #Archive extractor
 #usage: ex <file>
@@ -118,13 +118,12 @@ git_push() {
 }
 
 git_recursive() {
-
-    #if there are git submodules
-    top=$(pwd)
-    paths=$(cat .gitmodules | grep path)
-    echo $paths
-    #No git submodules
-
+    if [ -f .gitmodules ]
+   then
+    python ~/.bash/python/git_recursive.py
+    else
+    git_push
+    fi
 }
 
 
