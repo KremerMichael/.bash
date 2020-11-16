@@ -16,8 +16,8 @@ patient_connect_mystery="https://patientconnect.bu.edu/CheckIn/Survey/ShowAll/21
 #kerbos_username=os.environ.get('KERBOS_USERNAME')
 #kerbos_password=os.getenv('KERBOS_PASSWORD')
 
-kerbos_username="kremerme"
-kerbos_password="LErsbak85742"
+kerbos_username="e"
+kerbos_password="2"
 
 print(kerbos_username)
 print(kerbos_password)
