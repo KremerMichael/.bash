@@ -15,6 +15,7 @@ alias python='python3.8'
 alias doom='emacs'
 
 #Some ls aliases
+alias sl='ls'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'

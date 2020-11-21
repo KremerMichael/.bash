@@ -4,39 +4,65 @@
 # automatically complete my daily symptom
 # survey
 ################################################
+# Imports
 from selenium import webdriver
+import argparse
 import time
 import os
 
-# links to be used later
-patient_connect_home="http://patientconnect.bu.edu/"
-patient_connect_survey="https://patientconnect.bu.edu/Mvc/Patients/QuarantineSurvey"
-
+################################################
+# SET UP ARGUMENTS
+################################################
+parser = argparse.ArgumentParser(description='A function built to automatically complete the BU Daily Symptom Survey')
+parser.add_argument('-u', '--username', help='kerbos username')
+parser.add_argument('-p', '--password', help='kerbos password')
+arguments = parser.parse_args()
 # set username and password
-kerbos_username=os.getenv('KERBOS_USERNAME')
-kerbos_password=os.getenv('KERBOS_PASSWORD')
+if arguments.username is None:
+    kerbos_username = os.getenv('KERBOS_USERNAME')
+else:
+    kerbos_username = arguments.username
+if arguments.password is None:
+    kerbos_password = os.getenv('KERBOS_PASSWORD')
+else:
+    kerbos_password = arguments.password
 
-# get to login page
+################################################
+# LINKS 
+################################################
+PATIENT_CONNECT_HOME = "http://patientconnect.bu.edu/"
+PATIENT_CONNECT_SURVEY = "https://patientconnect.bu.edu/Mvc/Patients/QuarantineSurvey"
+
+
+################################################
+# MAIN 
+################################################
+# Get login page
 driver = webdriver.Firefox()
-driver.get(patient_connect_home)
+driver.get(PATIENT_CONNECT_HOME)
 time.sleep(1)
 
-# fill in login & submit
+# Login
 user = driver.find_element_by_name("j_username")
 user.send_keys(kerbos_username)
 pasw = driver.find_element_by_name("j_password")
 pasw.send_keys(kerbos_password)
 driver.find_element_by_name("_eventId_proceed").click()
 
-# go to form, fillin, submit
-driver.get(patient_connect_survey)
+# Get form
+driver.get(PATIENT_CONNECT_SURVEY)
 driver.find_element_by_link_text("Continue").click()
-#button_top = driver.find_element_by_class_name("col-xs-6"0).click()
+# Fill out form
 buttons = driver.find_elements_by_class_name("answer.button.p-3")
 i=1
 for button in buttons:
     if (i % 2 ) != 0:
         button.click()
     i+=1
+#Submit form
 driver.find_element_by_class_name("btn.btn-lg.btn-success").click()
-#print(button_top)
+
+################################################
+# DONE
+print('DONE')
+################################################
