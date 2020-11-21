@@ -62,6 +62,8 @@ for button in buttons:
 #Submit form
 driver.find_element_by_class_name("btn.btn-lg.btn-success").click()
 
+# Get rid of geckodriver.log
+print("WIP remove geckodriver.log")
 ################################################
 # DONE
 print('DONE')
