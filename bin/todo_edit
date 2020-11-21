@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+todo_edit() {
+    emacs ~/Documents/toDo.txt
+}

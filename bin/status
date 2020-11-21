@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+status() {
+    git status > /tmp/tmp.txt
+    if [ $? = 0 ]
+   then
+    cat /tmp/tmp.txt
+    else
+    svn status > /tmp/tmp.txt
+    if [ $? = 0 ]
+   then
+    cat /tmp/tmp.txt
+    else
+    echo "Not in git or svn repo"
+    fi
+    fi
+}

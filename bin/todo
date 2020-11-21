@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Read from todo list
+todo() {
+    clear
+    cat ~/Documents/toDo.txt
+    date
+}

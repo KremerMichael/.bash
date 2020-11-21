@@ -12,6 +12,6 @@ To add these functions to the bash shell, add this section to your ~/.bashrc
 #=================================================================================================#
 #Source bash shell from .bash/ 
 if [ -f ~/.bash/bash_source ]; then
-   . ~/.bash/bash_source
+   . ~/.bash/_env
 fi
 '''sh

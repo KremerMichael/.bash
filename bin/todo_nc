@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+todo_nc() {
+    cat ~/Documents/toDo.txt
+    date
+}

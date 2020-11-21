@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+#=================================================================================================#
+# VARIABLES
+#=================================================================================================#
+EMAIL="kremeremichael@gmail.com"
+GIT_USERNAME="KremerMichael"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+#Add functions to path
+if [ -d ~/.bash/bin ]; then
+    export PATH="~/.bash/bin:$PATH"
+    echo MIKE
+fi
+
+#=================================================================================================#
+# BASH SOURCES
+#=================================================================================================#
+#Store destinations for ssh in ~/.bash/bash_ssh
+if [ -f ~/.bash/bash_ssh ]; then
+    . ~/.bash/bash_ssh
+fi
+
+#Store color setup in ~/.bash/bash_colors and load them with this
+if [ -f ~/.bash/bash_colors ]; then
+    . ~/.bash/bash_colors
+fi
+
+#Store alias definitions in ~/.bash/bash_aliases and load them with this
+if [ -f ~/.bash/bash_aliases ]; then
+    . ~/.bash/bash_aliases
+fi
+
+# Note that bash_ssh is ignored in the git repo,
+# It's probably smart to not host ssh usernames and destinations remotely
+if [ -f ~/.bash/bash_private ]; then
+    . ~/.bash/bash_private
+fi
+
+# enable programmable completion features
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+	. /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+	. /etc/bash_completion
+    fi
+fi
