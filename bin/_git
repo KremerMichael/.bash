@@ -36,7 +36,7 @@ elif [ $flag = '-p' ]; then
     # add all changes
     git add .
     # Get current branch
-    branch=$(git rev-parse --abrev-ref HEAD)
+    branch=$(git rev-parse --abbrev-ref HEAD)
     # Commit and push to origin $branch
     git commit -m "$msg"
     git push -u origin $branch
