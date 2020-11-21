@@ -24,8 +24,8 @@ if [ -f ~/.bash/bash_ssh ]; then
 fi
 
 #Store color setup in ~/.bash/bash_colors and load them with this
-if [ -f ~/.bash/bash_colors ]; then
-    . ~/.bash/bash_colors
+if [ -f ~/.bash/colors ]; then
+    . ~/.bash/colors
 fi
 
 #Store alias definitions in ~/.bash/bash_aliases and load them with this
@@ -35,8 +35,8 @@ fi
 
 # Note that bash_ssh is ignored in the git repo,
 # It's probably smart to not host ssh usernames and destinations remotely
-if [ -f ~/.bash/bash_private ]; then
-    . ~/.bash/bash_private
+if [ -f ~/.bash/private ]; then
+    . ~/.bash/private
 fi
 
 # enable programmable completion features
