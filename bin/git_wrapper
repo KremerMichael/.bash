@@ -44,6 +44,8 @@ elif [ $flag = '-p' ]; then
 # Recursive
 elif [ $flag = '-r' ]; then
     echo "_git -r is a work in progress"
+    # Cheating a little but lets offload this problem to python
+    python ~/.bash/python/git_recursive.py
 
 # Invalid argument
 else
