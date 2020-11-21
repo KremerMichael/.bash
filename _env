@@ -13,7 +13,6 @@ fi
 #Add functions to path
 if [ -d ~/.bash/bin ]; then
     export PATH="~/.bash/bin:$PATH"
-    echo MIKE
 fi
 
 #=================================================================================================#
