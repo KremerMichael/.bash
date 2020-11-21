@@ -29,8 +29,8 @@ if [ -f ~/.bash/bash_colors ]; then
 fi
 
 #Store alias definitions in ~/.bash/bash_aliases and load them with this
-if [ -f ~/.bash/bash_aliases ]; then
-    . ~/.bash/bash_aliases
+if [ -f ~/.bash/aliases ]; then
+    . ~/.bash/aliases
 fi
 
 # Note that bash_ssh is ignored in the git repo,

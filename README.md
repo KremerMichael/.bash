@@ -1,11 +1,6 @@
 Note that the symbolic link in this repo expects this directory to be located ~/.bash
 To add these functions to the bash shell, add this section to your ~/.bashrc
 
-
-
-
-
-
 ```sh
 #=================================================================================================#
 # BASH SOURCE
@@ -15,3 +10,8 @@ if [ -f ~/.bash/_env ]; then
    . ~/.bash/_env
 fi
 ```sh
+
+_env:
+bin/:
+aliases:
+
