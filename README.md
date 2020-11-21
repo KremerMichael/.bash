@@ -6,7 +6,7 @@ To add these functions to the bash shell, add this section to your ~/.bashrc
 
 
 
-'''sh
+```sh
 #=================================================================================================#
 # BASH SOURCE
 #=================================================================================================#
@@ -14,4 +14,4 @@ To add these functions to the bash shell, add this section to your ~/.bashrc
 if [ -f ~/.bash/bash_source ]; then
    . ~/.bash/_env
 fi
-'''sh
+```sh
