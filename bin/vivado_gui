@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 #Run Vivado IDE
-vivado_gui() {
-    source /opt/Xilinx/Vivado/2019.2/settings64.sh
-    vivado
-    clean_vivado
-}
+source /opt/Xilinx/Vivado/2019.2/settings64.sh
+vivado
+clean_vivado

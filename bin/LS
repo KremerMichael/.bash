@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-LS() {
-    clear
-    ls
-}
+clear
+ls
