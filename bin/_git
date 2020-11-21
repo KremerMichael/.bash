@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+################################################
+# HELP
+################################################
+help(){
+    echo "This function is my personal wrapper for git"
+    echo ""
+    echo "Syntax: _git [-c|-p|-r]"
+    echo "-c,   configure any git repo"
+    echo "-p,   automatic git push"
+    echo "-r,   recursively push repo->subrepos"
+}
+
+################################################
+# MAIN
+################################################
+flag=$1
+msg=$2
+
+# Empty flag
+if [ $flag = '' ]; then
+    echo "No argument given"
+    help
+
+# Configure
+elif [ $flag = '-c' ]; then
+    git config --global user.email $EMAIL
+    git config --global user.name  $GIT_USERNAME
+    git config --global credential.helper 'cache --timeout=3600'
+
+# Push
+elif [ $flag = '-p' ]; then
+    clean -t
+    # If no msg is given
+    [ -z "$msg" ] && msg="auto push run at $(date)" 
+    # add all changes
+    git add .
+    # Get current branch
+    branch=$(git rev-parse --abrev-ref HEAD)
+    # Commit and push to origin $branch
+    git commit -m "$msg"
+    git push -u origin $branch
+
+# Recursive
+elif [ $flag = '-r' ]; then
+    echo "_git -r is a work in progress"
+
+# Invalid argument
+else
+    echo "Invalid argument given: $flag"
+    help
+fi

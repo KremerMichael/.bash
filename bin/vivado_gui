@@ -2,4 +2,4 @@
 #Run Vivado IDE
 source /opt/Xilinx/Vivado/2019.2/settings64.sh
 vivado
-clean_vivado
+clean -v

@@ -2,7 +2,7 @@
 #push changes to current branch to origin
 #usage: git_push <commit message>
 #removing tildes because they are insanely annoying
-clean_tilde
+clean -t
 
 #Getting message from user
 msg=$1

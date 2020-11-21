@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-#Remove all files ending with tilde
-rm ./*~ &> /dev/null
-rm ./.*~ &> /dev/null
-rm ./#*# &> /dev/null

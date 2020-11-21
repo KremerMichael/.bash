@@ -1,5 +1,41 @@
 #!/usr/bin/env bash
-#Read from todo list
-clear
-cat ~/Documents/toDo.txt
-date
+################################################
+# HELP
+################################################
+help(){
+    echo "Use this function as the base of a todo list"
+    echo ""
+    echo "Syntax: todo [-nc|-e|-a|-h]"
+    echo "-nc,  no-clear, do not clear the screen"
+    echo "-e,   edit todo list"
+    echo "-a,   <new item>, append new item to todo list"
+    echo "-h,   print this help message"
+}
+
+################################################
+# MAIN 
+################################################
+flag=$1
+text=$2
+
+# Print with no clear
+if [ $flag = '-nc' ]; then
+    cat ~/Documents/toDo.txt
+
+# Edit todo list
+elif [ $flag = '-e' ]; then
+    vim ~/Documents/toDo.txt
+
+# Append item to todo list
+elif [ $flag = '-a' ]; then
+    echo $text >> ~/Documents/toDo.txt
+
+# Print help message
+elif [ $flag = '-h' ]; then
+    help
+
+# Clear and print
+else
+    clear
+    cat ~/Documents/toDo.txt
+fi

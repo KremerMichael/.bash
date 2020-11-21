@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+################################################
+# HELP
+################################################
+help(){
+    echo "Use this function to clean up directories"
+    echo ""
+    echo "Syntax: clean [-t] [-v] [-h]"
+    echo "-t,   remove files ending with tilde ~"
+    echo "-v,   remove log files created by Vivado"
+    echo "-h,   print this help message"
+}
+
+################################################
+# MAIN
+################################################
+args=$@
+for arg in $args ; do
+
+    # Clean tildes
+    if [ $arg = '-t' ]; then
+        rm ./*~ &> /dev/null
+        rm ./.*~ &> /dev/null
+
+    # Clean Vivado logs
+    elif [ $arg = '-v' ]; then
+        rm ./vivado.jou &> /dev/null
+        rm ./vivado.log &> /dev/null
+
+    # Help
+    elif [ $arg = '-h' ]; then
+        help
+
+    # Invalid Argument
+    else
+        echo "Invalid Argument: $arg"
+        help
+    fi
+done

@@ -27,13 +27,14 @@ alias eagle='~/Public/eagle-9.6.2/eagle'
 alias citrix='/opt/Citrix/ICAClient/selfservice'
 
 #for automated git_push
-alias gp='git_push'
+alias gp='_git -p'
 
-#Shorten tilde function
-alias ct='clean_tilde'
+#Shorten some cleaning functions
+alias ct='clean -t'
 
 #todo alias
 alias td='todo'
+alias te='todo -e'
 
 #Confirm before overwriting something
 alias cp="cp -i"
@@ -53,3 +54,5 @@ alias home_mem='du -shc *'
 #Add an "alert" alias for long running commands.  Use like so:
 #example: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+#alias status='snv status || git status'

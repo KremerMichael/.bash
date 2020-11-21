@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-#Remove log files from vivado
-rm ./vivado.jou
-rm ./vivado.log
