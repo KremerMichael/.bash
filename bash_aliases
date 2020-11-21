@@ -27,7 +27,7 @@ alias eagle='~/Public/eagle-9.6.2/eagle'
 alias citrix='/opt/Citrix/ICAClient/selfservice'
 
 #for automated git_push
-alias gp='_git -p'
+alias gp='git_wrapper -p'
 
 #Shorten some cleaning functions
 alias ct='clean -t'
