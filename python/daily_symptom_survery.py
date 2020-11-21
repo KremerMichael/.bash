@@ -4,34 +4,39 @@
 # automatically complete my daily symptom
 # survey
 ################################################
-
-import webbrowser
 from selenium import webdriver
+import time
 import os
 
+# links to be used later
 patient_connect_home="http://patientconnect.bu.edu/"
 patient_connect_survey="https://patientconnect.bu.edu/Mvc/Patients/QuarantineSurvey"
-patient_connect_mystery="https://patientconnect.bu.edu/CheckIn/Survey/ShowAll/21"
 
-#kerbos_username=os.environ.get('KERBOS_USERNAME')
-#kerbos_password=os.getenv('KERBOS_PASSWORD')
+# set username and password
+kerbos_username=os.getenv('KERBOS_USERNAME')
+kerbos_password=os.getenv('KERBOS_PASSWORD')
 
-kerbos_username="e"
-kerbos_password="2"
+# get to login page
+driver = webdriver.Firefox()
+driver.get(patient_connect_home)
+time.sleep(1)
 
-print(kerbos_username)
-print(kerbos_password)
+# fill in login & submit
+user = driver.find_element_by_name("j_username")
+user.send_keys(kerbos_username)
+pasw = driver.find_element_by_name("j_password")
+pasw.send_keys(kerbos_password)
+driver.find_element_by_name("_eventId_proceed").click()
 
-from webdriver_manager.chrome import ChromeDriverManager
-
-driver = webdriver.Chrome(ChromeDriverManager().install())
-
-#webbrowser.open(patient_connect_home)
-#chromedriver = os.popen("which chromedriver").read()
-#print(chromedriver)
-#driver = webdriver.Chrome(chromedriver)
-#driver = webdriver.Chrome(executable_path=chromedrive_location)
-#driver.get(patient_connect_home)
-
-
-
+# go to form, fillin, submit
+driver.get(patient_connect_survey)
+driver.find_element_by_link_text("Continue").click()
+#button_top = driver.find_element_by_class_name("col-xs-6"0).click()
+buttons = driver.find_elements_by_class_name("answer.button.p-3")
+i=1
+for button in buttons:
+    if (i % 2 ) != 0:
+        button.click()
+    i+=1
+driver.find_element_by_class_name("btn.btn-lg.btn-success").click()
+#print(button_top)
