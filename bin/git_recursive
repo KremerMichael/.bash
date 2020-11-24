@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-if [ -f .gitmodules ]
-then
-python ~/.bash/python/git_recursive.py
-else
-git_push
-fi

@@ -5,17 +5,18 @@
 help(){
     echo "This function is my personal wrapper for git"
     echo ""
-    echo "Syntax: _git [-c|-p|-r]"
-    echo "-c,   configure any git repo"
-    echo "-p,   automatic git push"
-    echo "-r,   recursively push repo->subrepos"
+    echo "Syntax: _git [-c|-p|-r|-P <path>]"
+    echo "-c,           configure any git repo"
+    echo "-p <msg>,     automatic git push w/ optional message"
+    echo "-P <path>,    go to <path> then push"   
+    echo "-r,           recursively push repo->subrepos"
 }
 
 ################################################
 # MAIN
 ################################################
 flag=$1
-msg=$2
+opt=$2
 
 # Empty flag
 if [ $flag = '' ]; then
@@ -32,12 +33,22 @@ elif [ $flag = '-c' ]; then
 elif [ $flag = '-p' ]; then
     clean -t
     # If no msg is given
-    [ -z "$msg" ] && msg="auto push run at $(date)" 
+    [ -z "$opt" ] && opt="auto push run at $(date)" 
     # add all changes
     git add .
     # Get current branch
     branch=$(git rev-parse --abbrev-ref HEAD)
     # Commit and push to origin $branch
+    git commit -m "$opt"
+    git push -u origin $branch
+
+# Push at path
+elif [ $flag = '-P' ]; then
+    cd $opt
+    clean -t
+    msg="auto push run at $(date)"
+    git add .
+    branch=$(git rev-parse --abbrev-ref HEAD)
     git commit -m "$msg"
     git push -u origin $branch
 
@@ -45,7 +56,7 @@ elif [ $flag = '-p' ]; then
 elif [ $flag = '-r' ]; then
     echo "_git -r is a work in progress"
     # Cheating a little but lets offload this problem to python
-    python ~/.bash/python/git_recursive.py
+    python3.8 ~/.bash/python/git_recursive.py -p $(pwd)
 
 # Invalid argument
 else

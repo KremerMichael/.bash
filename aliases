@@ -28,6 +28,7 @@ alias citrix='/opt/Citrix/ICAClient/selfservice'
 
 #for automated git_push
 alias gp='git_wrapper -p'
+alias gr='git_wrapper -r'
 
 #Shorten some cleaning functions
 alias ct='clean -t'
@@ -35,6 +36,7 @@ alias ct='clean -t'
 #todo alias
 alias td='todo'
 alias te='todo -e'
+alias tdnc='todo -nc'
 
 #Confirm before overwriting something
 alias cp="cp -i"
