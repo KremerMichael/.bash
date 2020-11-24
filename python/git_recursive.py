@@ -35,7 +35,7 @@ def git_recursive(path):
                 if DEBUG:
                     print("path to submodule {}".format(path_submodule_absolute))
                 git_recursive(path_submodule_absolute)
-        subprocess.run('/home/kremerme/.bash/bin/git_wrapper -p')
+        subprocess.run(['/home/kremerme/.bash/bin/git_wrapper', '-p'])
     else:
         git_path = os.path.join(path, ".git")
         if DEBUG:
@@ -43,7 +43,7 @@ def git_recursive(path):
         if os.path.exists(git_path):
             if DEBUG:
                 print("pushing from {}".format(path))
-            print("TODO, implement push")
+            subprocess.run(['/home/kremerme/.bash/bin/git_wrapper', '-p'])
         else:
             if DEBUG:
                 print("ERROR: Not inside of git repository")
