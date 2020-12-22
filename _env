@@ -4,6 +4,9 @@
 #=================================================================================================#
 export EMAIL="kremeremichael@gmail.com"
 export GITHUB_USERNAME="KremerMichael"
+export FIRST_NAME="Michael"
+export LAST_NAME="Kremer"
+export EMPLOYMENT="Boston University"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
