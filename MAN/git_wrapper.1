@@ -1,0 +1,47 @@
+.\"
+.\" Man page for git_wrapper 
+.\"
+.\" Michael Kremer
+.\" kremeremichael@gmail.com
+.\" Electrical Engineer
+.\" Boston University
+.\"
+.TH git_wrapper "September 16, 2020"
+.LO 1
+.SH NAME
+man \- format and display the on-line manual pages
+.SH SYNOPSIS
+.B man 
+.RB [ \-c ]
+.RB [ \-p 
+.IR msg ]
+.RB [ \-P
+.IR path ] 
+.RB [ \-r ] 
+
+.SH DESCRIPTION
+.B git_wrapper
+is a command line wrapper for git
+
+.SH OPTIONS
+.TP
+.B \-\^c " "
+Automatically configure the current git repo.
+This requires $EMAIL, $GITHUB_USERNAME, and $GITHUB_TOKEN are to be defined as enviornmental variables.
+.TP
+.B \-\^p " message"
+Add all changes to git tracking, commit with given message, then push current branch to remote. 
+If no message is used as an argument, the current date and time are used for the commit description.
+.B \-M
+at all.  See
+.BR "SEARCH PATH FOR MANUAL PAGES" .
+.TP
+.B \-\^P " path"
+Add all changes to git tracking, commit with current date and time, then push current branch to remote.
+This is done at the given path
+.TP
+.B \-\^r
+Recursively push a git repo including all submodules
+
+.SH AUTHOR
+Michael Kremer <kremeremichael@gmail.com>.

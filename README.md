@@ -10,8 +10,3 @@ if [ -f ~/.bash/_env ]; then
    . ~/.bash/_env
 fi
 ```sh
-
-_env:
-bin/:
-aliases:
-
