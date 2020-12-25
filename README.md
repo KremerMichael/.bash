@@ -31,7 +31,7 @@ To add these functions to the bash shell, add this section to your ~/.bashrc
 if [ -f ~/.shell/_env ]; then
    . ~/.shell/_env
 fi
-```sh
+```
 
 # Roadmap
 
