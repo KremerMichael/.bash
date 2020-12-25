@@ -9,10 +9,7 @@ alias emcas='emacs'
 alias emcsa='emacs'
 
 #Python
-alias python='python3.8'
-
-#Lauching doom, i.e.
-alias doom='emacs'
+#alias python='python3.8'
 
 #Some ls aliases
 alias sl='ls'
@@ -57,4 +54,7 @@ alias home_mem='du -shc *'
 #example: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-#alias status='snv status || git status'
+#===================================#
+# MACOS ALIASES
+#===================================#
+alias brew='brew $@ || arch -x86_64 brew $@'
