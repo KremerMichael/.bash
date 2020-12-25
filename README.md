@@ -1,3 +1,5 @@
+Michael Kremer <kremeremichael@gmail.com>
+
 To add these functions to the bash shell, add this section to your ~/.bashrc
 
 ```sh
