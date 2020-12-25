@@ -1,6 +1,9 @@
 <div align="center">
+
 # Greetings!
+
 </div>
+
 Hello and welcome to my shell! This repo is a representation of my love for
 the shell. 
 
