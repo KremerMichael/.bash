@@ -57,4 +57,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #===================================#
 # MACOS ALIASES
 #===================================#
-alias brew='brew $@ || arch -x86_64 brew $@'
+if [ $MACHINE = mac ]; then
+    alias brew='brew $@ || arch -x86_64 brew $@'
+    alias ls='ls -G'
+fi

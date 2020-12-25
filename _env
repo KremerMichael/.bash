@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 #=================================================================================================#
+# SET MACHINE
+#=================================================================================================#
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     export MACHINE=linux;;
+    Darwin*)    export MACHINE=mac;;
+    CYGWIN*)    export MACHINE=cygwin;;
+    MINGW*)     export MACHINE=minGw;;
+    *)          export MACHINE="UNKNOWN:${unameOut}"
+esac
+#=================================================================================================#
 # VARIABLES
 #=================================================================================================#
 export EMAIL="kremeremichael@gmail.com"
