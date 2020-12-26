@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+
 #=================================================================================================#
 # SET MACHINE
 #=================================================================================================#
@@ -10,6 +12,8 @@ case "${unameOut}" in
     MINGW*)     export MACHINE=minGw;;
     *)          export MACHINE="UNKNOWN:${unameOut}"
 esac
+
+
 #=================================================================================================#
 # VARIABLES
 #=================================================================================================#
@@ -24,33 +28,34 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-#Add functions to path
-if [ -d ~/.shell/bin ]; then
-    export PATH="~/.shell/bin:$PATH"
-fi
 
 #=================================================================================================#
 # BASH SOURCES
 #=================================================================================================#
+#Add functions to path
+if [ -d ~/.shell/bin ]; then
+    export PATH="$SHELL_PATH/bin:$PATH"
+fi
+
 #Store destinations for ssh in ~/.bash/bash_ssh
-if [ -f ~/.shell/etc/bash_ssh ]; then
-    . ~/.shell/etc/bash_ssh
+if [ -f $SHELL_PATH/etc/bash_ssh ]; then
+    . $SHELL_PATH/etc/bash_ssh
 fi
 
 #Store color setup in ~/.bash/bash_colors and load them with this
-if [ -f ~/.shell/etc/colors ]; then
-    . ~/.shell/etc/colors
+if [ -f $SHELL_PATH/etc/colors ]; then
+    . $SHELL_PATH/etc/colors
 fi
 
 #Store alias definitions in ~/.bash/bash_aliases and load them with this
-if [ -f ~/.shell/etc/aliases ]; then
-    . ~/.shell/etc/aliases
+if [ -f $SHELL_PATH/etc/aliases ]; then
+    . $SHELL_PATH/etc/aliases
 fi
 
 # Note that bash_ssh is ignored in the git repo,
 # It's probably smart to not host ssh usernames and destinations remotely
-if [ -f ~/.shell/etc/private ]; then
-    . ~/.shell/etc/private
+if [ -f $SHELL_PATH/etc/private ]; then
+    . $SHELL_PATH/etc/private
 fi
 
 # enable programmable completion features

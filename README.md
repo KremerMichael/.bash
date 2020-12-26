@@ -51,14 +51,20 @@ appeneded to $PATH.
 To add these functions to the bash shell, add this section to your ~/.bashrc
 
 ```sh
-#=============================================================================#
+#=================================================================================================#
 # BASH SOURCE
-#=============================================================================#
-#Source bash shell from .shell/ 
-if [ -f ~/.shell/_env ]; then
-   . ~/.shell/_env
+# Source bash shell from .shell/ 
+#=================================================================================================#
+#This path needs to manually set
+export SHELL_PATH='/Users/kremerme/.shell'
+if [ -f $SHELL_PATH/_env ]; then
+    . $SHELL_PATH/_env
 fi
 ```
+
+Note that the above sourcing assumes .shell/ is located inside of the home 
+directory. If .shell/ is not checked out into the home directory, the path 
+above will have to be changed appropriately.
 
 # Contact Me
 
