@@ -22,6 +22,10 @@ This repo is a representation of my love for the shell.
 
 A collection of bash functions. This directory is added to the $PATH by \_env
 
+**etc/**
+
+Config files, some files in this directory are synced with pre-hook scripts
+
 **MAN/**
 
 Man pages I have either written or generated for the scripts and functions in
