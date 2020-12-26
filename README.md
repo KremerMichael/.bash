@@ -20,19 +20,27 @@ This repo is a representation of my love for the shell.
 
 **bin/**
 
-A collection of bash functions
+A collection of bash functions. This directory is added to the $PATH by \_env
 
 **MAN/**
 
+Man pages I have either written or generated for the scripts and functions in
+this repo.
+
 **templates/**
+
+Really a work in progress, but it's nice to have a collection of templates for
+varius types of files. 
 
 **python/**
 
-A collection of python functions
+A collection of python functions. Currently working on setting this up inside
+of a virtual enviornment.
 
 **scripts/**
 
-A collection of scripts
+A collection of scripts that not used often enough to be include in a directory
+appeneded to $PATH.
 
 # Install
 
