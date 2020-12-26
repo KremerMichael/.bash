@@ -11,13 +11,22 @@ the shell.
 ### Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Install](#install)
+- [Overview](#overview)
 - [Roadmap](#roadmap)
 - [Contact Me](#contact-me)
 
 # Introduction
 
-# Features
+# Overview
+
+bin/
+A collection of bash functions
+
+python/
+A collection of python functions
+
+scripts/
+A collection of scripts
 
 # Install
 
@@ -38,7 +47,7 @@ fi
 This repo is a constantly evolving representation of my workflow and knowledge
 about the shell. Because of this, most changes to this repo are spur in the 
 moment decisions. That said, as I hear and see cool things I will do my best to
-note here 
+note them here. 
 
 # Contact Me
 
