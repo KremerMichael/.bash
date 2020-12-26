@@ -1,9 +1,27 @@
-#store apt list
-#TODO, check that sys is ubuntu
-rm ~/sys/apt_list.txt
-apt list >> ~/sys/apt_list.txt
+# Get date so we can time stamp files
+date=$(date +"%m-%d-%y")
 
-#sync all of git
-cd ~/
-echo "WIP git recursive"
-#git_wrapper -r
+# Store lists
+if [ $MACHINE = linux ]; then
+    #TODO check for arch vs ubuntu
+    # Remove old list
+    rm $SHELL_PATH/etc/apt_list_*.txt
+    # Write new list
+    apt list > $SHELL_PATH/etc/apt_list_$date.txt
+
+elif [ $MACHINE = mac ]; then
+    # Remove old list
+    rm $SHELL_PATH/etc/brew_list_*.txt
+    # Write new list
+    brew list --formula > $SHELL_PATH/etc/brew_list_$date.txt
+fi
+
+# sync up some rc files
+if [ -f ~/.bashrc ]; then 
+    cp ~/.bashrc $SHELL_PATH/etc/ 
+fi
+if [ -f ~/.vimrc ]; then
+    cp ~/.vimrc $SHELL_PATH/etc/
+fi
+
+

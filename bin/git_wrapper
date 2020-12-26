@@ -25,11 +25,25 @@ if [ $flag = '' ]; then
 
 # Configure
 elif [ $flag = '-c' ]; then
-    git config --global user.email $EMAIL
-    git config --global user.name  $GITHUB_USERNAME
     git config --global credential.helper 'cache --timeout=3600'
-    git remote rm origin
-    git remote add origin "https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_USERNAME/$(basename `git rev-parse --show-toplevel`).git"
+
+    if ! [ -z $EMAIL ]; then
+        git config --global user.email $EMAIL
+    else
+        echo "no \$EMAIL, not configuring user.email"
+    fi
+
+    if ! [ -z $GITHUB_USERNAME ]; then
+        git config --global user.name  $GITHUB_USERNAME
+        if ! [ -z $GITHUB_TOKEN ]; then
+            git remote rm origin
+            git remote add origin "https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_USERNAME/$(basename `git rev-parse --show-toplevel`).git"
+        else
+            echo "no \$GITHUB_TOKEN, not configuring remote"
+        fi
+    else
+        echo "no \$GITHUB_USERNAME, not configuring user.name"
+    fi
 
 # Push
 elif [ $flag = '-p' ]; then
@@ -58,7 +72,7 @@ elif [ $flag = '-P' ]; then
 elif [ $flag = '-r' ]; then
     echo "_git -r is a work in progress"
     # Cheating a little but lets offload this problem to python
-    python3.8 ~/.bash/python/git_recursive.py -p $(pwd)
+    $SHELL_PATH/python/git_recursive.py -p $(pwd)
 
 # Invalid argument
 else
