@@ -11,6 +11,12 @@ help(){
     echo "-a,   <new item>, append new item to todo list"
     echo "-h,   print this help message"
 }
+################################################
+# SETUP
+################################################
+if ! [ -f ~/Documents/toDo.txt]; then
+    touch toDo.txt
+fi
 
 ################################################
 # MAIN 

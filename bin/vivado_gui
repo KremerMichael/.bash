@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 #Run Vivado IDE
-source /opt/Xilinx/Vivado/2019.2/settings64.sh
-vivado
-clean -v
+if [ -f /opt/Xilinx/Vivado/2019.2/settings64.sh ]; then
+    source /opt/Xilinx/Vivado/2019.2/settings64.sh
+    vivado
+    clean -v
+else
+    echo "/opt/Xilinx/Vivado/2019.2/settings64.sh not found"
+fi
