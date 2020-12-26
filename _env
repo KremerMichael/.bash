@@ -33,27 +33,28 @@ fi
 # BASH SOURCES
 #=================================================================================================#
 #Add functions to path
-if [ -d ~/.shell/bin ]; then
+if [ -d $SHELL_PATH/bin ]; then
     export PATH="$SHELL_PATH/bin:$PATH"
 fi
 
-#Store destinations for ssh in ~/.bash/bash_ssh
+#Store destinations for ssh in etc/bash_ssh
 if [ -f $SHELL_PATH/etc/bash_ssh ]; then
     . $SHELL_PATH/etc/bash_ssh
 fi
 
-#Store color setup in ~/.bash/bash_colors and load them with this
+#Store color setup in etc/bash_colors and load them with this
 if [ -f $SHELL_PATH/etc/colors ]; then
     . $SHELL_PATH/etc/colors
 fi
 
-#Store alias definitions in ~/.bash/bash_aliases and load them with this
+#Store alias definitions in etc/aliases and load them with this
 if [ -f $SHELL_PATH/etc/aliases ]; then
     . $SHELL_PATH/etc/aliases
 fi
 
-# Note that bash_ssh is ignored in the git repo,
+# Note that private is ignored in the git repo,
 # It's probably smart to not host ssh usernames and destinations remotely
+# so you'll have to define them each time you clone the repo
 if [ -f $SHELL_PATH/etc/private ]; then
     . $SHELL_PATH/etc/private
 fi
