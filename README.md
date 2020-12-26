@@ -58,4 +58,4 @@ fi
 
 # Contact Me
 
-Michael Kremer <kremeremichael@gmail.com>
+Michael Kremer, <kremeremichael@gmail.com>

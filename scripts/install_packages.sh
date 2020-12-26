@@ -3,10 +3,37 @@
 # only dependency of this script is 'apt' which should be included already in any reasonable Ubuntu
 # distribution
 #=============================================================================================================
-
 # SETUP
-sudo apt update
-if [ -f ~/Scripts/setup/packages.cfg ]; then . ~/Scripts/setup/packages.cfg || echo "ERROR loading packages.cfg"; fi
+#=============================================================================================================
+# set the installer
+if [ $MACHINE = mac ]; then
+    installer = 'brew'
+    optional_flag = '--cask'
+
+elif [ $MACHINE = linux ]; then
+    installer = 'sudo apt'
+    optional_flag = ''
+    $installer update
+else
+    echo "ERROR Not on recognized machine, unable to set installer"
+    exit 1
+fi
+
+#if arch
+#installer = 'sudo pacman -s'
+
+
+# Load the config file
+if [ -f ~/.shell/setup/packages.cfg ]; then
+    . ~/.shell/setup/packages.cfg
+else
+    echo "ERROR sourcing ~/.shell/setup/packages.cfg"
+    exit 1
+fi
+
+
+#=============================================================================================================
+# INSTALLS
 #=============================================================================================================
 
 # CODE DEVELOPMENT
@@ -29,7 +56,7 @@ if [ $en_libreCAD = yes ]; then sudo apt install librecad || echo "Failed instal
 if [ $en_spotify = yes ]; then sudo apt install snap && snap install spotify || echo "Failed installing spotify"; fi
 if [ $en_discord = yes];  then sudo snap install discord || echo "Failed installing discord"; fi
 #=============================================================================================================
-
+    
 # TERMINAL APPLICATIONS
 if [ $en_mutt = yes ]; then sudo apt install mutt || echo "Failed installing mutt"; fi
 if [ $en_alcritty = yes ]; then echo "Must fill this alacritty"; fi
@@ -82,7 +109,6 @@ fi
 # MISC
 if [ $en_alert = yes ]; then sudo apt install libnotify-bin || echo "Failed installing libnotify-bin"; fi
 #=============================================================================================================
-
+    
 #Make sure all packages are up to date
 sudo apt upgrade
-
