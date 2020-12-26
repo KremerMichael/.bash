@@ -10,8 +10,8 @@ the shell.
 
 ### Table of Contents
 - [Introduction](#introduction)
-- [Features](#features)
 - [Overview](#overview)
+- [Install](#install)
 - [Roadmap](#roadmap)
 - [Contact Me](#contact-me)
 
