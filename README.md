@@ -43,7 +43,7 @@ of a virtual enviornment.
 
 **scripts/**
 
-A collection of scripts that not used often enough to be include in a directory
+A collection of scripts that are not used often enough to be include in a directory
 appeneded to $PATH.
 
 # Install
