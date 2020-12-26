@@ -18,13 +18,20 @@ This repo is a representation of my love for the shell.
 
 # Overview
 
-bin/
+**bin/**
+
 A collection of bash functions
 
-python/
+**MAN/**
+
+**templates/**
+
+**python/**
+
 A collection of python functions
 
-scripts/
+**scripts/**
+
 A collection of scripts
 
 # Install
