@@ -4,18 +4,17 @@
 
 </div>
 
-Hello and welcome to my shell! This repo is a representation of my love for
-the shell. 
-
+Hello and welcome to my shell! 
 
 ### Table of Contents
 - [Introduction](#introduction)
 - [Overview](#overview)
 - [Install](#install)
-- [Roadmap](#roadmap)
 - [Contact Me](#contact-me)
 
 # Introduction
+
+This repo is a representation of my love for the shell. 
 
 # Overview
 
@@ -41,13 +40,6 @@ if [ -f ~/.shell/_env ]; then
    . ~/.shell/_env
 fi
 ```
-
-# Roadmap
-
-This repo is a constantly evolving representation of my workflow and knowledge
-about the shell. Because of this, most changes to this repo are spur in the 
-moment decisions. That said, as I hear and see cool things I will do my best to
-note them here. 
 
 # Contact Me
 
