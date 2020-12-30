@@ -14,8 +14,8 @@ help(){
 ################################################
 # SETUP
 ################################################
-if ! [ -f ~/Documents/toDo.txt]; then
-    touch toDo.txt
+if ! [ -f ~/Documents/toDo.txt ]; then
+    touch ~/Documents/toDo.txt
 fi
 
 ################################################
