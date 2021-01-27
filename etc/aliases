@@ -8,8 +8,8 @@ alias emasc='emacs'
 alias emcas='emacs'
 alias emcsa='emacs'
 
-#Python
-#alias python='python3.8'
+#egrep
+alias grepi='egrep -i'
 
 #Some ls aliases
 alias sl='ls'
