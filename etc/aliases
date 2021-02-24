@@ -15,6 +15,7 @@ alias grepi='egrep -i'
 alias sl='ls'
 alias ll='ls -alF'
 alias la='ls -A'
+alias lr='ls ./* -r'
 alias l='ls -CF'
 
 #to run eagle
